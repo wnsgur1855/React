@@ -1,22 +1,27 @@
-import React from 'react';
+import React from 'react'
 
-//자식 컴포넌트
-function Child() {
-  return <div>나는 자식이랑께</div>// = <div>나는 자식이랑께</div> 굳이 따로 분리함
+
+function Son(props) {
+  console.log("props", props.GDF)
+  return <div>나는 {props.GDF}손자입니다.</div>
+}
+
+function Mother(props) {
+  const MotherName = '김옥순'           //중간에서 정보 전달만 하고 하는 일이 없음
+  const GDF = props.GrandFatherName     // 이 중간다리가 3개가 되면 prop drilling
+  return <Son GDF = {GDF}/>
 }
 
 
-//나는 부모입니다ㅣ
+
+function GrandFather() {
+  const name = "김기덕"
+  return <Mother GrandFatherName = {name} />
+}
+
+
 function App() {
-  return (                    //<div> < /div>를 저렇게 축소 가능, return문 최상단에는 tag가 하나밖에 없어야한다.
-    <>                        
-        <Child /> 
-        <Child /> 
-        <Child /> 
-        <Child /> 
-        <Child />   
-    </>
-
-  ) 
+  return <GrandFather/>
 }
-export default App;
+
+export default App
