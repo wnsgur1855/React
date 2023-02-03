@@ -1,7 +1,7 @@
 import React from 'react';
 function App() {
-  function onclickButtonHandler () {
-    alert("니똥")
+  const onclickButtonHandler = () => {
+    alert('니똥');
   }
  
   return (
