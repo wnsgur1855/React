@@ -1,0 +1,54 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        
+       
+    </head>
+    <body>
+        <form name="form " onsubmit  = "{return false}">
+            First name : <br/ >
+            <input type = "text" name = "firstName"  id = "firstName" required> <br/ >
+            Last name : <br/ >
+            <input type = "text" name = "lastName"  id = "lastName" required> <br/ >
+            Email : <br/ >
+            <input type = "email" name = "email" id = "email" required> <br/ >
+            Gender : 
+            <input type = "radio" name="gender" value = "male" >
+            Male
+            <input type = "radio" name = "gender" value = "female" >
+            Female
+            <br />
+            Favorite :
+            <input type = "checkbox" name = "lang" value ="html_box" /> HTML 
+            <input type = "checkbox" name = "lang" value ="java_box" /> JAVA
+            <input type = "checkbox" name = "lang" value ="js_box" />JAVAScript
+            <br />
+            Browswer : 
+            <select  name ="browsers" >
+                <option value ="크롬" selected >크롬</option>
+                <option value ="사파리" >사파리</option>
+                <option value ="엣지" >엣지</option>
+            </select>   
+            <br />
+            Birthday :
+            <input type = "date" name = "birthday" />
+            <br>
+            <input type = "submit" value = "눌러라" onclick="{alertcheck()}">
+        </form>
+        <script>
+            function alertcheck() {
+                const first = document.querySelector('#firstName').value;
+                const last = document.querySelector('#lastName').value;
+                const email = document.querySelector('#email').value;
+                if(!first || !last || !email)  return;
+                return alert('제출완료')
+            }
+        </script>
+        
+        
+    </body>
+    </html>
