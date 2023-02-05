@@ -30,7 +30,7 @@ function App() {
 			}}
 
 			>
-			로그인	
+			로그인짱	
 			</button>			
 		</>
 )};
